@@ -1,0 +1,46 @@
+<html lang="en" dir="ltr" >
+
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>Battleships</title>
+        <link rel="stylesheet" href="leaderboardstyle.css"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Montserrat:wght@100;400&display=swap" rel="stylesheet"></link>
+    </head>
+
+    <body>
+        <div class="container-wrap">
+            <section id="leaderboard">
+                <nav class="ladder-nav">
+                    <div class="ladder-title">
+                    <h1>Standings</h1>
+                    </div>              
+                </nav>
+                <table id="rankings" class="leaderboard-results" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Name</th>
+                            <th>Time</th>
+                            <th>Mode</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <% for(var i = 0; i < records.length; i++) {%> 
+                            <tr>
+                                <span>
+                                <td><%= i+1 %></td>
+                                <td><%= records[i].name %></td>
+                                <td><%= Math.floor(records[i].time/60000) + ":" + Math.floor((records[i].time % 60000)/1000) %></td>
+                                <td><%= records[i].mode %></td>
+                                </span>
+                            </tr>
+                            <%}
+                        %>
+                        
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </body>
+
+</html>
